@@ -1,7 +1,7 @@
 /*1.3 В отдельном классе попробуйте сделать побитовую операцию с литералом 42.5,
 опишите результат в комментариях в классе с заданием.*/
 
-package homework_1;
+package home_work_1;
 import java.util.Scanner;
 
 public class Task1_3 {

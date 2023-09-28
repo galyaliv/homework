@@ -1,6 +1,6 @@
 //Определить високосный год или нет
 
-package homework_1;
+package home_work_1;
 import java.util.Scanner;
 
 public class Task4_6 {

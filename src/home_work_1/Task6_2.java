@@ -1,6 +1,6 @@
 //Написать в отдельном классе main метод и в нём код который будет выполнять общее условие при помощи if else if
 
-package homework_1;
+package home_work_1;
 import java.util.Objects;
 import java.util.Scanner;
 

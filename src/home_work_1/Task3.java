@@ -1,7 +1,7 @@
 /* Изучить библиотеку (класс) Math из jdk. (https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html)
 Отразить эксперименты в сданной домашней работе. Материалов в интернете очень много*/
 
-package homework_1;
+package home_work_1;
 import java.util.Scanner;
 
 public class Task3 {
