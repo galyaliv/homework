@@ -17,8 +17,8 @@ public class Task1_2 {
         int number = Integer.parseInt(number_string);
 
         for (int i = 1; i <= number_string.length(); i++) {
-          int digit = Math.floor(number / (Math.pow(10, number_string.length()-i)));
-          System.out.println(digit + " ");
+            //int digit = Math.floor(number / (Math.pow(10, number_string.length()-i)));
+            //System.out.println(digit + " ");
         }
     }
 }
