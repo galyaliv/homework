@@ -7,7 +7,7 @@ package home_work_2.loops;
 import java.util.Scanner;
 
 public class Task1_1_1 {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите число от 1 до 20: ");
         int number = in.nextInt();
@@ -22,5 +22,20 @@ public class Task1_1_1 {
         else {
             System.out.println("Некорректные данные");
         }
+    }*/
+
+    public static void main(String[] args) {
+        if(args.length != 1){
+            System.out.println("Передано неправильное количество аргументов");
+            return;
+        }
+
+        int max = Integer.parseInt(args[0]);
+        int result = 1;
+
+        for (int i = 1; i <= max; i++) {
+            result *= i;
+        }
+        System.out.println("Произведение чисел от 1 до " + max + " равно " + result);
     }
 }

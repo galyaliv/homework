@@ -11,14 +11,81 @@ import java.util.Scanner;
 
 public class Task1_2 {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Введите число: ");
-        String number_string = in.nextLine();
-        int number = Integer.parseInt(number_string);
+        for (String arg : args) {
+            if (isDouble(arg)) {
+                System.out.println("Введено не целое число: " + arg);
+                continue;
+            }
+            if (isText(arg)) {
+                System.out.println("Введено не число: " + arg);
+                continue;
+            }
 
-        for (int i = 1; i <= number_string.length(); i++) {
-            //int digit = Math.floor(number / (Math.pow(10, number_string.length()-i)));
-            //System.out.println(digit + " ");
+            int result = addAllDigit(arg);
+            String format = prepareForJob(arg, result);
+
+            System.out.println(format);
         }
+    }
+
+    public static int addAllDigit(String line){
+        int result = 1;
+        int length = line.length();
+        for (int i = 0; i < length; i++) {
+            result *= Character.getNumericValue(line.charAt(i));
+        }
+        return result;
+    }
+
+    public static String prepareForJob(String line, int result){
+        int length = line.length();
+        StringBuilder format = new StringBuilder();
+
+        for (int i = 0; i < length; i++) {
+            format.append(line.charAt(i));
+        }
+        //////////////
+        return line;
+    }
+
+    public static boolean isDouble (String arg){
+        int argLength = arg.length();
+        boolean foundPoint = false;
+
+        for (int i = 0; i < argLength; i++) {
+            char ch = arg.charAt(i);
+
+            if (ch == '.' || ch == ',') {
+                if (foundPoint) {
+                    return false;
+                }
+                foundPoint = true;
+            }
+            else if (Character.isLetter(ch)) {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isText(String arg){
+        int argLength = arg.length();
+        boolean foundWord = false;
+
+        for (int i = 0; i < argLength; i++) {
+            char ch = arg.charAt(i);
+
+            if (ch == '.' || ch == ','){
+                if(foundWord){
+                    return true;
+                }
+                foundWord = true;
+            }
+            else if (Character.isLetter(ch)) {
+               return true;
+            }
+        }
+
+        return false;
     }
 }
