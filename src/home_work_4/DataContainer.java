@@ -62,7 +62,7 @@ public class DataContainer<T> {
             return false;
         }
         else {
-            for(int i = index; i < data.length; i++){
+            for(int i = index; i < data.length - 1; i++){
                 T temp = data[i];
                 data[i] = data[i+1];
                 data[i+1] = temp;
@@ -81,12 +81,12 @@ public class DataContainer<T> {
         if(item != null) {
             for(int i = 0; i < data.length; i++){
                 if (data[i] == item){
-                    for(int j = i; j < data.length; j++) {
-                        T term = data[i];
-                        data[i] = data[i + 1];
-                        data[i + 1] = term;
+                    for(int j = i; j < data.length - 1; j++) {
+                        T term = data[j];
+                        data[j] = data[j + 1];
+                        data[j + 1] = term;
                     }
-                    data = Arrays.copyOf(data, data.length-1);
+                    data = Arrays.copyOf(data, data.length - 1);
                     return true;
                 }
             }
@@ -98,12 +98,12 @@ public class DataContainer<T> {
      * Сортирует объекты поля
      * @param comparator
      */
-    public void sort(Comparator<T> comparator){
-        for (int i = 0; i < data.length; i++){
-            for (int j = i; j > 0 && comparator.compare(data[j-1], data[j]) > 0; j--){
-                T temp = data[i];
-                data[i] = data[i+1];
-                data[i+1] = temp;
+    public void sort(Comparator<T> comparator) {
+        for (int i = 0; i < data.length; i++) {
+            for (int j = i; j > 0 && comparator.compare(data[j], data[j-1]) < 0; j--) {
+                T temp = data[j];
+                data[j] = data[j-1];
+                data[j-1] = temp;
             }
         }
     }
