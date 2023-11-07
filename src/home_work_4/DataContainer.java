@@ -13,7 +13,7 @@ public class DataContainer<T> {
      * @param item переданное число
      * @return номер позиции (-1 в случае ошибки)
      */
-     int add(T item){
+     public int add(T item){
          if(item == null) {
              return -1;
          }
@@ -81,13 +81,7 @@ public class DataContainer<T> {
         if(item != null) {
             for(int i = 0; i < data.length; i++){
                 if (data[i] == item){
-                    for(int j = i; j < data.length - 1; j++) {
-                        T term = data[j];
-                        data[j] = data[j + 1];
-                        data[j + 1] = term;
-                    }
-                    data = Arrays.copyOf(data, data.length - 1);
-                    return true;
+                    return delete(i);
                 }
             }
         }
@@ -100,7 +94,7 @@ public class DataContainer<T> {
      */
     public void sort(Comparator<T> comparator) {
         for (int i = 0; i < data.length; i++) {
-            for (int j = i; j > 0 && comparator.compare(data[j], data[j-1]) < 0; j--) {
+            for (int j = i; j > 0 && comparator.compare(data[j-1], data[j]) > 0; j--) {
                 T temp = data[j];
                 data[j] = data[j-1];
                 data[j-1] = temp;
