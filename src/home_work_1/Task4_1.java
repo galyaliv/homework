@@ -6,15 +6,23 @@ import java.util.Scanner;
 public class Task4_1 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        //ввод пользователем числа для определения четности
         System.out.print("Введите число: ");
         int num = in.nextInt();
-
-        if (num % 2 == 1) { //вычисление остатка от деления числа на 2
-            System.out.print("Число " + num + " нечётное"); //печать результата
+        boolean isEven = isEven(num);
+        if (isEven){
+            System.out.println("Число " + num + " чётное");
         }
         else {
-            System.out.print("Число " + num + " чётное"); //печать результата
+            System.out.print("Число " + num + " нечётное");
+        }
+    }
+
+    public static boolean isEven(int num){
+        if (num % 2 == 1) { //вычисление остатка от деления числа на 2
+            return false;
+        }
+        else {
+            return true;
         }
     }
 }

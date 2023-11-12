@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Task4_2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        //ввод пользователем чисел
         System.out.print("Введите первое число: ");
         int num1 = in.nextInt();
         System.out.print("Введите второе число: ");
@@ -14,14 +13,19 @@ public class Task4_2 {
         System.out.print("Введите третье число: ");
         int num3 = in.nextInt();
 
-        if ((num1 >= num2 && num1 <= num3) || (num1 >= num3 && num1 <= num2)) { //проверка первого числа
-            System.out.print("Среднее среди чисел: " + num1); //печать результата
+        int avg = avg(num1, num2, num3);
+        System.out.print("Среднее среди чисел: " + avg);
+    }
+
+    public static int avg(int num1, int num2, int num3){
+        if ((num1 >= num2 && num1 <= num3) || (num1 >= num3 && num1 <= num2)) {
+            return num1;
         }
-        else if ((num2 >= num1 && num2 <= num3) || (num2 >= num3 && num2 <= num1)) { //проверка второго числа
-            System.out.print("Среднее среди чисел: " + num2); //печать результата
+        else if ((num2 >= num1 && num2 <= num3) || (num2 >= num3 && num2 <= num1)) {
+            return num2;
         }
         else {
-            System.out.print("Среднее среди чисел: " + num3); //печать результата
+            return num3;
         }
     }
 }

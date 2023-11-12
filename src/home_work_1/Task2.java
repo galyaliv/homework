@@ -24,6 +24,27 @@ public class Task2 {
         int a;
         int b;
 
+        int x1 = x1();
+        int x2 = x2();
+        int x3 = x3();
+        int x4 = x4();
+        int x5 = x5();
+        int x6 = x6();
+        //int x7 = x7();
+        //int x8 = x8();
+        boolean x9 = x9();
+
+        System.out.println("2.1 5 + 2 / 8 = " + x1);
+        System.out.println("2.2 (5 + 2) / 8 = " + x2);
+        System.out.println("2.3 (5 + 2++) / 8 = " + x3);
+        System.out.println("2.4 (5 + 2++) / --8 = " + x4);
+        System.out.println("2.5 (5 * 2 >> 2++) / --8 = " + x5);
+        System.out.println("2.6 (5 + 7 > 20 ? 68 : 22 * 2 >> 2++) / --8 = " + x6);
+        System.out.println("2.7 (5 + 7 > 20 ? 68 >= 68 : 22 * 2 >> 2++) / --8: ошибка компиляции");
+        System.out.println("2.8 6 - 2 > 3 && 12 * 12 <= 119 : ошибка компиляции");
+        System.out.println("2.9 true && false = " + x9);
+
+        /*
         // 5 + 2 / 8 = 5.25, однако в переменной типа int значение округлится вниз до целого - 5
         int x1 = 5 + 2 / 8; //создание переменной, помещение в нее значения выражения
         System.out.println("2.1 5 + 2 / 8 = " + x1); //печать результата
@@ -67,6 +88,38 @@ public class Task2 {
 
         // true && false = false
         boolean x9 = true && false; //создание переменной, помещение в нее значения выражения
-        System.out.println("2.9 true && false = " + x9); //печать результата
+        System.out.println("2.9 true && false = " + x9); //печать результата */
     }
+
+    public static int x1(){
+        return 5 + 2 / 8;
+    }
+    public static int x2(){
+        return (5 + 2) / 8;
+    }
+    public static int x3(){
+        int a = 2;
+        return (5 + a++) / 8;
+    }
+    public static int x4(){
+        int a = 2;
+        int b = 8;
+        return (5 + a++) / --b;
+    }
+    public static int x5(){
+        int a = 2;
+        int b = 8;
+        return (5 * 2 >> a++) / --b;
+    }
+    public static int x6(){
+        int a = 2;
+        int b = 8;
+        return (5 + 7 > 20 ? 68 : 22 * 2 >> a++) / --b;
+    }
+    public static boolean x9(){
+        int a = 2;
+        int b = 8;
+        return true && false;
+    }
+
 }

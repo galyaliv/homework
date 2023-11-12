@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Task5 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.print("Сейчас рабочий день?");
+        System.out.println("Сейчас рабочий день? (Да - true, нет - false)");
         boolean answer1 = in.nextBoolean();
-        System.out.print("У вас сейчас отпуск?");
+        System.out.println("У вас сейчас рабочий день? (Да - true, нет - false)");
         boolean answer2 = in.nextBoolean();
 
         boolean result = sleepIn(answer1, answer2);
@@ -27,12 +27,6 @@ public class Task5 {
      * @return true - если можно спать, false - если спать нельзя
      */
     public static boolean sleepIn(boolean weekday, boolean vacation) {
-        if(vacation || !weekday) {
-            return true;
-        }
-        else {
-            return false;
-        }
-
+        return !weekday || vacation;
     }
 }

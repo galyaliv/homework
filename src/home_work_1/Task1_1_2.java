@@ -10,26 +10,27 @@ import java.util.Scanner;
 public class Task1_1_2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-
-        //ввод пользователем с клавиатуры первого числа
         System.out.print("Введите первое число: ");
         int num1 = in.nextInt();
-        //20 в десятичной = 0001 0100 в двоичной
-
-        //ввод пользователем с клавиатуры второго числа
         System.out.print("Введите второе число: ");
         int num2 = in.nextInt();
-        //10 в десятичной = 0000 1010 в двоичной
 
-        //побитовые операции И и ИЛИ
-        System.out.println("Результат операции И: " + (num1 & num2)); //печать результата
+        System.out.println("Результат операции И: " + and(num1, num2));
         /* 0001 0100
            0000 1010
            0000 0000 - результат 0 */
 
-        System.out.println("Результат операции ИЛИ: " + (num1 | num2)); //печать результата
+        System.out.println("Результат операции ИЛИ: " + or(num1, num2)); //печать результата
         /* 0001 0100
            0000 1010
            0001 1110 - результат 30 */
+    }
+
+    public static int and(int num1, int num2){
+        return num1 & num2;
+    }
+
+    public static int or(int num1, int num2){
+        return num1 | num2;
     }
 }
